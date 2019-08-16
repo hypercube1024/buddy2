@@ -20,7 +20,7 @@ struct buddy2 {
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "hicpp-signed-bitwise"
-static unsigned int fixSize(unsigned int size) {
+static unsigned int fix_size(unsigned int size) {
     size |= size >> 1;
     size |= size >> 2;
     size |= size >> 4;
@@ -67,7 +67,7 @@ unsigned int buddy2_alloc(struct buddy2 *self, unsigned int size) {
     if (size <= 0) {
         size = 1;
     } else if (!IS_POWER_OF_2(size)) {
-        size = fixSize(size);
+        size = fix_size(size);
     }
 
     if (self->longest[index] < size) {
