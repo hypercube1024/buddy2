@@ -20,6 +20,7 @@ int main() {
             printf("size: %d\n", buddy2_size(buddy, arg));
             buddy2_dump(buddy);
         } else if (strcmp(cmd, "exit") == 0) {
+            buddy2_destroy(buddy);
             return 0;
         } else {
             buddy2_dump(buddy);

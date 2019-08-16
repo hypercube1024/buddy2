@@ -4,8 +4,8 @@
 #include <string.h>
 
 struct buddy2 {
-    unsigned size;
-    unsigned longest[1];
+    unsigned int size;
+    unsigned int longest[1];
 };
 
 #define LEFT_LEAF(index) ((index) * 2 + 1)
