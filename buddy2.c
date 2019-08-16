@@ -5,7 +5,7 @@
 
 struct buddy2 {
     unsigned int size;
-    unsigned int longest[1];
+    unsigned int longest[];
 };
 
 #define LEFT_LEAF(index) ((index) * 2 + 1)
