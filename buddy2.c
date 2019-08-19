@@ -38,7 +38,7 @@ struct buddy2* buddy2_new(unsigned int size) {
     if (size < 1 || !IS_POWER_OF_2(size))
         return NULL;
 
-    self = (struct buddy2 *) ALLOC(2 * size * sizeof(unsigned int));
+    self = (struct buddy2 *) ALLOC((size * 2 - 2) * sizeof(unsigned int) + sizeof(struct buddy2));
     self->size = size;
     node_size = size * 2;
 

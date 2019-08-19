@@ -6,7 +6,7 @@
 int main() {
     char cmd[80];
     int arg;
-    struct buddy2 *buddy = buddy2_new(32);
+    struct buddy2 *buddy = buddy2_new(32); // 2^5
     buddy2_dump(buddy);
     while (true) {
         scanf("%s %d", cmd, &arg);
