@@ -5,7 +5,7 @@
 
 struct buddy2;
 
-struct buddy2 *buddy2_new(unsigned int size);
+struct buddy2* buddy2_new(unsigned int size);
 
 void buddy2_destroy(struct buddy2 *self);
 
