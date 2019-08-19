@@ -51,11 +51,11 @@ struct buddy2* buddy2_new(unsigned int size) {
     return self;
 }
 
-void buddy2_destroy(struct buddy2 *self) {
+void buddy2_destroy(struct buddy2* self) {
     FREE(self);
 }
 
-unsigned int buddy2_alloc(struct buddy2 *self, unsigned int size) {
+unsigned int buddy2_alloc(struct buddy2* self, unsigned int size) {
     unsigned int index = 0;
     unsigned int node_size;
     unsigned int offset = 0;
@@ -93,7 +93,7 @@ unsigned int buddy2_alloc(struct buddy2 *self, unsigned int size) {
     return offset;
 }
 
-void buddy2_free(struct buddy2 *self, unsigned int offset) {
+void buddy2_free(struct buddy2* self, unsigned int offset) {
     unsigned int node_size, index = 0;
     unsigned int left_longest, right_longest;
 
@@ -126,7 +126,7 @@ void buddy2_free(struct buddy2 *self, unsigned int offset) {
     }
 }
 
-unsigned int buddy2_size(struct buddy2 *self, unsigned int offset) {
+unsigned int buddy2_size(struct buddy2* self, unsigned int offset) {
     unsigned int node_size, index = 0;
 
     assert(self && offset >= 0 && offset < self->size);
@@ -139,7 +139,7 @@ unsigned int buddy2_size(struct buddy2 *self, unsigned int offset) {
     return node_size;
 }
 
-void buddy2_dump(struct buddy2 *self) {
+void buddy2_dump(struct buddy2* self) {
     char canvas[65];
     unsigned int i, j;
     unsigned node_size, offset;
